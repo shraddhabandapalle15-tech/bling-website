@@ -1,11 +1,10 @@
 import { useState, type ReactNode } from "react";
 import { Link, useParams } from "react-router";
 import { Minus, Plus, ChevronDown } from "lucide-react";
-import { BG, PEACH, LAV, YELLOW, INK, HEADING_INK, DISPLAY, SANS, SCRIPT2 } from "../theme";
-import { PRODUCTS, FEATURES, REVIEWS, JAR_SIZE, SAFETY_INFO, PRODUCT_FAQS } from "../data/products";
+import { BG, YELLOW, INK, HEADING_INK, DISPLAY, SANS, SCRIPT2 } from "../theme";
+import { PRODUCTS, FEATURES, JAR_SIZE, SAFETY_INFO, PRODUCT_FAQS } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { Jar } from "../components/Jar";
-import { Wave } from "../components/Wave";
 import { ProductCard } from "../components/ProductCard";
 
 /* ─── ACCORDION ROW ──────────────────────────────────────────────────────── */
@@ -39,8 +38,6 @@ export default function ProductDetail() {
   const mrpPrice = product.originalPrice ? parseInt(product.originalPrice.replace("₹", ""), 10) : null;
   const discountPct = mrpPrice ? Math.round(((mrpPrice - unitPrice) / mrpPrice) * 100) : null;
   const related = PRODUCTS.filter(p => p.slug !== product.slug).slice(0, 4);
-  const productReviews = REVIEWS.filter(r => r.product === product.slug);
-  const shownReviews = (productReviews.length ? productReviews : REVIEWS).slice(0, 3);
 
   return (
     <>
@@ -169,55 +166,6 @@ export default function ProductDetail() {
             </AccordionItem>
           </div>
         </div>
-        <Wave from={BG} to={PEACH} />
-      </section>
-
-      {/* studio shots */}
-      <section style={{ background: PEACH, padding: "88px 24px 0" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <div style={{ fontFamily: SCRIPT2, fontSize: 26, color: INK, opacity: .5, marginBottom: 6 }}>— in the wild —</div>
-            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(26px,3.2vw,44px)", color: HEADING_INK, margin: 0, letterSpacing: "-.5px", textTransform: "uppercase" }}>Studio Shots — {product.name}</h2>
-          </div>
-          <div className="pdpGallery" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 16 }}>
-            {product.gallery.map((url, i) => (
-              <div key={i} style={{ borderRadius: 22, overflow: "hidden", height: 260 }}>
-                <img src={url} alt={`${product.name} in use ${i + 1}`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-              </div>
-            ))}
-          </div>
-          <div style={{ paddingBottom: 88 }} />
-        </div>
-        <Wave from={PEACH} to={LAV} flip />
-      </section>
-
-      {/* reviews */}
-      <section style={{ background: LAV, padding: "88px 24px 0" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <div style={{ fontFamily: SCRIPT2, fontSize: 26, color: INK, opacity: .5, marginBottom: 6 }}>— field notes —</div>
-            <h2 style={{ fontFamily: DISPLAY, fontSize: "clamp(26px,3.2vw,44px)", color: HEADING_INK, margin: 0, letterSpacing: "-.5px", textTransform: "uppercase" }}>What Bakers Are Saying</h2>
-          </div>
-          <div className="pdpReviews" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
-            {shownReviews.map((r, i) => (
-              <div key={i} style={{ background: r.bg, borderRadius: 28, padding: "36px 32px" }}>
-                <div style={{ display: "flex", gap: 3, marginBottom: 16 }}>
-                  {Array.from({ length: r.rating }).map((_, j) => <span key={j} style={{ color: INK, fontSize: 17 }}>★</span>)}
-                </div>
-                <p style={{ fontFamily: SANS, fontSize: 15, lineHeight: 1.75, color: INK, margin: "0 0 22px", fontStyle: "italic", opacity: .85 }}>"{r.text}"</p>
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <div style={{ width: 38, height: 38, borderRadius: "50%", background: BG, color: INK, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: DISPLAY, fontSize: 11 }}>{r.avatar}</div>
-                  <div>
-                    <div style={{ fontFamily: DISPLAY, fontSize: 13.5, color: INK }}>{r.name}</div>
-                    <div style={{ fontFamily: SANS, fontSize: 12, color: INK, opacity: .5 }}>{r.handle}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div style={{ paddingBottom: 88 }} />
-        </div>
-        <Wave from={LAV} to={BG} />
       </section>
 
       {/* related */}

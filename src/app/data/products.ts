@@ -1,4 +1,4 @@
-import { PINK, YELLOW, LAV, PEACH } from "../theme";
+import { PINK, YELLOW, LAV, BLUSH } from "../theme";
 
 /* ─── PRODUCT TYPE ───────────────────────────────────────────────────────── */
 export type Product = {
@@ -284,7 +284,7 @@ export const FEATURES = [
   { icon:"✦", title:"100% Edible",     bg:PINK,   desc:"Every ingredient is certified food-safe. Sprinkle, sip, savour — zero worry."              },
   { icon:"✔", title:"Food Grade",      bg:LAV,    desc:"Meets international safety standards — FDA to EU approved. Total baking confidence."        },
   { icon:"🥂", title:"Safe for Drinks", bg:YELLOW, desc:"Dissolves beautifully in champagne, cocktails, and sparkling water."                       },
-  { icon:"🎂", title:"Made for Bakers", bg:PEACH,  desc:"Designed by pastry chefs for every skill level. Professional results, effortlessly."       },
+  { icon:"🎂", title:"Made for Bakers", bg:BLUSH,  desc:"Designed by pastry chefs for every skill level. Professional results, effortlessly."       },
 ];
 
 /* ─── GALLERY (homepage inspiration grid) ────────────────────────────────── */
@@ -301,12 +301,12 @@ export const GALLERY = [
 export const STEPS = [
   { n:"01", icon:"✨", label:"Choose",   bg:PINK,   desc:"Pick your shade from our sparkling collection — each more magical than the last."                 },
   { n:"02", icon:"🧁", label:"Sprinkle", bg:LAV,    desc:"Dust onto cakes, drizzle into drinks, brush across chocolates. Beautifully effortless."            },
-  { n:"03", icon:"⭐", label:"Shine",    bg:YELLOW, desc:"Watch your creation transform. Tag us @Bling and inspire the world."                               },
+  { n:"03", icon:"⭐", label:"Shine",    bg:BLUSH,  desc:"Watch your creation transform. Tag us @Bling and inspire the world."                               },
 ];
 
 /* ─── REVIEWS ────────────────────────────────────────────────────────────── */
 export const REVIEWS = [
-  { name:"Sophia M.", handle:"@sophiabakes",  avatar:"SM", bg:PINK,   rating:5, text:"I used Rose Gold Luxe on my wedding cake and everyone stopped to photograph it. The shimmer is jaw-dropping.",             product:"rose-gold-shimmer" },
+  { name:"Sophia M.", handle:"@sophiabakes",  avatar:"SM", bg:BLUSH,  rating:5, text:"I used Rose Gold Luxe on my wedding cake and everyone stopped to photograph it. The shimmer is jaw-dropping.",             product:"rose-gold-shimmer" },
   { name:"Jamie L.",  handle:"@jamie.stirs",   avatar:"JL", bg:LAV,    rating:5, text:"Dropped Gold Reserve into New Year champagne and the whole table lost their minds. Bling is pure magic in a bottle.", product:"aurora-gold" },
   { name:"Priya K.",  handle:"@priyapastry",   avatar:"PK", bg:YELLOW, rating:5, text:"As a pastry chef I am extremely picky. Bling is the only edible glitter I trust for client orders. Perfection.",   product:"violet-dreams" },
 ];
