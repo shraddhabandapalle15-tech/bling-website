@@ -17,6 +17,7 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
+  publicDir: path.resolve(__dirname, 'src/public'),
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if

@@ -313,10 +313,10 @@ export const REVIEWS = [
 
 /* ─── INSTAGRAM ──────────────────────────────────────────────────────────── */
 export const INSTA = [
-  { url:"https://images.unsplash.com/photo-1502741509793-1bf00d85aeff?w=320&h=320&fit=crop&auto=format", rot:-3   },
-  { url:"https://images.unsplash.com/photo-1516462919870-8bcf749b0135?w=320&h=320&fit=crop&auto=format", rot:2.5  },
-  { url:"https://images.unsplash.com/photo-1775369230404-a6171a95e4f4?w=320&h=320&fit=crop&auto=format", rot:-1.5 },
-  { url:"https://images.unsplash.com/photo-1700909592926-c07b0c2a0bed?w=320&h=320&fit=crop&auto=format", rot:4    },
-  { url:"https://images.unsplash.com/photo-1627013817723-3bbb5166cc50?w=320&h=320&fit=crop&auto=format", rot:-2.5 },
-  { url:"https://images.unsplash.com/photo-1634118520179-0c78b72df69a?w=320&h=320&fit=crop&auto=format", rot:3    },
+  { url:"/images/image1.jpg", type:"image", rot:-3   },
+  { url:"/images/image2.jpg", type:"image", rot:2.5  },
+  { url:"/images/image3.mp4", type:"video", rot:-1.5 },
+  { url:"/images/image4.jpg", type:"image", rot:4    },
+  { url:"/images/image5.jpg", type:"image", rot:-2.5 },
+  { url:"/images/image6.mp4", type:"video", rot:3    },
 ];

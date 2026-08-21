@@ -1,7 +1,7 @@
-import { useState, type CSSProperties } from "react";
+import { useState, useEffect, useRef, type CSSProperties } from "react";
 import { Link } from "react-router";
 import { BG, PEACH, PINK, LAV, YELLOW, CORAL, INK, HEADING_INK, DISPLAY, SCRIPT, SCRIPT2, SANS } from "../theme";
-import { PRODUCTS, FEATURES, GALLERY, STEPS, REVIEWS, INSTA } from "../data/products";
+import { PRODUCTS, FEATURES, STEPS, REVIEWS, INSTA } from "../data/products";
 import { useFadeUp } from "../hooks/useFadeUp";
 import { Jar } from "../components/Jar";
 import { Wave } from "../components/Wave";
@@ -145,7 +145,7 @@ function WhyBling() {
         </div>
         <div style={{ paddingBottom:88 }} />
       </div>
-      <Wave from={PEACH} to={BG} />
+      <Wave from={PEACH} to={YELLOW} />
     </section>
   );
 }
@@ -163,41 +163,6 @@ function FeatureCard({ f, delay }: { f:typeof FEATURES[0]; delay:number }) {
         <div style={{ fontSize:44, marginBottom:20 }}>{f.icon}</div>
         <h3 style={{ fontFamily:DISPLAY, fontSize:19, color:HEADING_INK, margin:"0 0 12px", letterSpacing:"0px", textTransform:"uppercase" }}>{f.title}</h3>
         <p style={{ fontFamily:SANS, fontSize:15, lineHeight:1.75, color:INK, opacity:.68, margin:0 }}>{f.desc}</p>
-      </div>
-    </div>
-  );
-}
-
-/* ─── GALLERY ────────────────────────────────────────────────────────────── */
-function Gallery() {
-  const h = useFadeUp();
-  return (
-    <section style={{ background:BG, padding:"100px 24px 0" }}>
-      <div style={{ maxWidth:1280, margin:"0 auto" }}>
-        <div ref={h.ref} style={{ ...h.s, textAlign:"center", marginBottom:64 }}>
-          <div style={{ fontFamily:SCRIPT2, fontSize:28, color:INK, marginBottom:10 } as CSSProperties}>made with Bling</div>
-          <h2 style={{ fontFamily:DISPLAY, fontSize:"clamp(34px,4.6vw,64px)", color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>Find Your Inspiration</h2>
-        </div>
-        <div className="gallGrid" style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:16 }}>
-          {GALLERY.map((g,i)=><GalleryTile key={i} g={g} index={i} />)}
-        </div>
-        <div style={{ paddingBottom:88 }} />
-      </div>
-      <Wave from={BG} to={YELLOW} flip />
-    </section>
-  );
-}
-
-function GalleryTile({ g, index }: { g:typeof GALLERY[0]; index:number }) {
-  const fu = useFadeUp(index * 90);
-  const [hov, setHov] = useState(false);
-  return (
-    <div ref={fu.ref} style={fu.s}>
-      <div style={{ borderRadius:24, overflow:"hidden", position:"relative", height:g.h, cursor:"pointer" }}
-        onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-        <img src={g.url} alt={g.label} style={{ width:"100%", height:"100%", objectFit:"cover", transform:hov?"scale(1.07)":"scale(1)", transition:"transform .55s cubic-bezier(.34,1.56,.64,1)" }} />
-        <div style={{ position:"absolute", inset:0, background:"linear-gradient(to top,rgba(37,37,37,.55) 0%,transparent 55%)", opacity:hov?1:.5, transition:"opacity .3s" }} />
-        <div style={{ position:"absolute", bottom:18, left:18, fontFamily:DISPLAY, fontSize:14, fontWeight:700, color:"white", transform:hov?"translateY(0)":"translateY(5px)", transition:"transform .3s" }}>{g.label} ✦</div>
       </div>
     </div>
   );
@@ -284,13 +249,24 @@ function ReviewCard({ r, delay }: { r:typeof REVIEWS[0]; delay:number }) {
 /* ─── INSTAGRAM ──────────────────────────────────────────────────────────── */
 function InstaCard({ item, idx }: { item:typeof INSTA[0]; idx:number }) {
   const [hov, setHov] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.play().catch(() => {});
+  }, []);
   return (
     <div className="iCard" style={{ width:178, height:178, borderRadius:22, overflow:"hidden", flexShrink:0, position:"relative", cursor:"pointer",
       transform: hov ? `rotate(${item.rot}deg) scale(1.09)` : `rotate(${item.rot}deg) scale(1)`,
       boxShadow: hov ? "0 16px 48px rgba(0,0,0,.20)" : "0 6px 24px rgba(0,0,0,.14)",
       transition:"all .38s cubic-bezier(.34,1.56,.64,1)", zIndex:hov?10:1 }}
       onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-      <img src={item.url} alt={`Bling creation ${idx+1}`} style={{ width:"100%", height:"100%", objectFit:"cover", transform:hov?"scale(1.07)":"scale(1)", transition:"transform .45s ease" }} />
+      {item.type === "video" ? (
+        <video ref={videoRef} src={item.url} autoPlay muted loop playsInline preload="auto" disablePictureInPicture disableRemotePlayback controls={false} style={{ width:"100%", height:"100%", objectFit:"cover", transform:hov?"scale(1.07)":"scale(1)", transition:"transform .45s ease" }} />
+      ) : (
+        <img src={item.url} alt={`Bling creation ${idx+1}`} style={{ width:"100%", height:"100%", objectFit:"cover", transform:hov?"scale(1.07)":"scale(1)", transition:"transform .45s ease" }} />
+      )}
     </div>
   );
 }
@@ -325,7 +301,6 @@ export default function Home() {
       <Hero />
       <Collection />
       <WhyBling />
-      <Gallery />
       <HowItWorks />
       <Reviews />
       <Instagram />
