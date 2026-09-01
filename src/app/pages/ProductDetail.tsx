@@ -58,13 +58,19 @@ export default function ProductDetail() {
           <div className="pdpGrid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }}>
             {/* visual */}
             <div style={{ position: "relative", display: "flex", justifyContent: "center", minHeight: 440 }}>
-              <div className="blobAnim" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 420, height: 420, background: product.bg, opacity: .38, borderRadius: "55% 45% 35% 65%/55% 35% 65% 45%", pointerEvents: "none" }} />
+              {!product.image && (
+                <div className="blobAnim" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: 420, height: 420, background: product.bg, opacity: .38, borderRadius: "55% 45% 35% 65%/55% 35% 65% 45%", pointerEvents: "none" }} />
+              )}
               {[{ t: 20, l: 30 }, { t: 60, l: 340 }, { t: 380, l: 20 }, { t: 340, l: 350 }].map((s, i) => (
                 <div key={i} className={["fa", "fb", "fc", "fa"][i]} style={{ position: "absolute", top: s.t, left: s.l, fontSize: TEXT_XL, color: INK, pointerEvents: "none" }}>✦</div>
               ))}
               <div className="fa" style={{ position: "relative", width: "100%", maxWidth: 320, display: "flex", justifyContent: "center" }}>
                 {product.image
-                  ? <img src={product.image} alt={product.name} style={{ width: "100%", maxWidth: 320, aspectRatio: "1/1", objectFit: "cover", borderRadius: "50%", boxShadow: "0 24px 64px rgba(0,0,0,.18)" }} />
+                  ? (
+                    <div style={{ width: "100%", maxWidth: 320, aspectRatio: "4 / 3", borderRadius: 24, overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,.18)" }}>
+                      <img src={product.image} alt={product.name} style={{ width: "100%", height: "100%", display: "block", objectFit: "cover", objectPosition: "center" }} />
+                    </div>
+                  )
                   : <Jar bg={product.bg} lid={product.lid} size={260} />}
               </div>
             </div>
