@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router";
-import { BG, INK, HEADING_INK, DISPLAY, SANS } from "../theme";
+import { BG, INK, HEADING_INK, DISPLAY, SANS, DISPLAY_H1, TEXT_SM, TEXT_MD } from "../theme";
 import { COLLECTIONS } from "../data/collections";
 import { PRODUCTS } from "../data/products";
 import { ShopProductCard } from "../components/ShopProductCard";
@@ -14,13 +14,13 @@ export default function CollectionDetail() {
   return (
     <section style={{ background: BG, paddingTop: 72, minHeight: "100vh" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px 8px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: SANS, fontSize: 13, color: INK, opacity: .5, marginBottom: 18 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: SANS, fontSize: TEXT_SM, color: INK, opacity: .5, marginBottom: 18 }}>
           <Link to="/collections" style={{ color: INK, textDecoration: "none" }}>Collections</Link>
           <span>/</span>
           <span style={{ opacity: .85 }}>{collection.name}</span>
         </div>
-        <h1 style={{ fontFamily: DISPLAY, fontSize: "clamp(34px,5vw,64px)", color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>{collection.name}</h1>
-        <p style={{ fontFamily: SANS, fontSize: 16, color: INK, opacity: .6, margin: 0, maxWidth: 520 }}>{collection.subtitle}</p>
+        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>{collection.name}</h1>
+        <p style={{ fontFamily: SANS, fontSize: TEXT_MD, color: INK, opacity: .6, margin: 0, maxWidth: 520 }}>{collection.subtitle}</p>
       </div>
 
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "36px 24px 100px" }}>

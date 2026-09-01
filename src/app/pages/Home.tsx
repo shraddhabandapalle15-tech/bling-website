@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, type CSSProperties } from "react";
 import { Link } from "react-router";
-import { BG, PEACH, PINK, LAV, YELLOW, CORAL, INK, HEADING_INK, DISPLAY, SCRIPT, SCRIPT2, SANS } from "../theme";
+import { BG, PEACH, PINK, LAV, YELLOW, CORAL, INK, HEADING_INK, DISPLAY, SCRIPT, SCRIPT2, SANS, DISPLAY_HERO, DISPLAY_H1, TEXT_XS, TEXT_3XL, TEXT_LG, TEXT_BASE, TEXT_2XS, TEXT_MD, TEXT_SM, TEXT_5XL, TEXT_XL, TEXT_6XL, TEXT_4XL } from "../theme";
 import { PRODUCTS, FEATURES, STEPS, REVIEWS, INSTA } from "../data/products";
 import { useFadeUp } from "../hooks/useFadeUp";
 import { Jar } from "../components/Jar";
@@ -57,25 +57,25 @@ function Hero() {
         <div className="heroGrid" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:60, alignItems:"center" }}>
           {/* text */}
           <div>
-            <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:PINK, borderRadius:100, padding:"9px 20px", marginBottom:32, fontFamily:SANS, fontWeight:600, fontSize:12.5, letterSpacing:"1px", textTransform:"uppercase", color:INK, opacity:.9 }}>
+            <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:PINK, borderRadius:100, padding:"9px 20px", marginBottom:32, fontFamily:SANS, fontWeight:600, fontSize:TEXT_XS, letterSpacing:"1px", textTransform:"uppercase", color:INK, opacity:.9 }}>
               ✦ Premium Edible Glitter — Est. 2020 ✦
             </div>
-            <h1 style={{ fontFamily:DISPLAY, fontSize:"clamp(44px,6.2vw,84px)", lineHeight:1.04, color:HEADING_INK, margin:"0 0 8px", letterSpacing:"-1.5px", textTransform:"uppercase" }}>
+            <h1 style={{ fontFamily:DISPLAY, fontSize:DISPLAY_HERO, lineHeight:1.04, color:HEADING_INK, margin:"0 0 8px", letterSpacing:"-1.5px", textTransform:"uppercase" }}>
               Make Every Sip{" "}
               <span style={{ color:PINK, WebkitTextStroke:`2px ${INK}` } as CSSProperties}>Sparkle</span>
               <br />
             </h1>
-            <div style={{ fontFamily:SCRIPT2, fontSize:30, color:INK, marginBottom:28 }}>
+            <div style={{ fontFamily:SCRIPT2, fontSize:TEXT_3XL, color:INK, marginBottom:28 }}>
               
             </div>
-            <p style={{ fontFamily:SANS, fontSize:18, lineHeight:1.8, color:INK, opacity:.68, maxWidth:480, marginBottom:48 }}>
+            <p style={{ fontFamily:SANS, fontSize:TEXT_LG, lineHeight:1.8, color:INK, opacity:.68, maxWidth:480, marginBottom:48 }}>
               Premium food-grade edible glitter for cakes, cocktails, desserts, chocolates, and beverages. Certified safe. Trusted by 12,000+ bakers and mixologists worldwide.
             </p>
             <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginBottom:52 }}>
-              <Link to="/shop" className="pbtn pulseAnim" style={{ display:"inline-block", background:YELLOW, color:INK, border:"none", borderRadius:100, padding:"18px 44px", fontFamily:DISPLAY, fontSize:14, letterSpacing:"1px", textTransform:"uppercase", textDecoration:"none" }}>
+              <Link to="/shop" className="pbtn pulseAnim" style={{ display:"inline-block", background:YELLOW, color:INK, border:"none", borderRadius:100, padding:"18px 44px", fontFamily:DISPLAY, fontSize:TEXT_BASE, letterSpacing:"1px", textTransform:"uppercase", textDecoration:"none" }}>
                 Shop Glitter ✦
               </Link>
-              <a href="#collection" className="obtn" style={{ display:"inline-block", background:"transparent", color:INK, border:`2px solid ${INK}`, borderRadius:100, padding:"18px 40px", fontFamily:DISPLAY, fontSize:14, letterSpacing:"1px", textTransform:"uppercase", textDecoration:"none" }}>
+              <a href="#collection" className="obtn" style={{ display:"inline-block", background:"transparent", color:INK, border:`2px solid ${INK}`, borderRadius:100, padding:"18px 40px", fontFamily:DISPLAY, fontSize:TEXT_BASE, letterSpacing:"1px", textTransform:"uppercase", textDecoration:"none" }}>
                 Explore Shades
               </a>
             </div>
@@ -83,12 +83,12 @@ function Hero() {
             <div style={{ display:"flex", alignItems:"center", gap:16 }}>
               <div style={{ display:"flex" }}>
                 {([[PINK,"SM"],[LAV,"JL"],[YELLOW,"PK"],[CORAL,"+9k"]] as const).map(([c,l],i) => (
-                  <div key={i} style={{ width:38, height:38, borderRadius:"50%", background:c, border:`2.5px solid ${BG}`, marginLeft:i ? -11 : 0, display:"flex", alignItems:"center", justifyContent:"center", fontFamily:DISPLAY, fontSize:10, color:INK }}>{l}</div>
+                  <div key={i} style={{ width:38, height:38, borderRadius:"50%", background:c, border:`2.5px solid ${BG}`, marginLeft:i ? -11 : 0, display:"flex", alignItems:"center", justifyContent:"center", fontFamily:DISPLAY, fontSize:TEXT_2XS, color:INK }}>{l}</div>
                 ))}
               </div>
               <div>
-                <div style={{ display:"flex", gap:2 }}>{Array.from({length:5}).map((_,i)=><span key={i} style={{color:CORAL,fontSize:15}}>★</span>)}</div>
-                <div style={{ fontFamily:DISPLAY, fontSize:13, opacity:.52, marginTop:2 }}>Loved by 12,000+ creators</div>
+                <div style={{ display:"flex", gap:2 }}>{Array.from({length:5}).map((_,i)=><span key={i} style={{color:CORAL,fontSize:TEXT_MD}}>★</span>)}</div>
+                <div style={{ fontFamily:DISPLAY, fontSize:TEXT_SM, opacity:.52, marginTop:2 }}>Loved by 12,000+ creators</div>
               </div>
             </div>
           </div>
@@ -115,14 +115,14 @@ function Collection() {
     <section id="collection" style={{ background:LAV, padding:"100px 24px 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto" }}>
         <div ref={h.ref} style={{ ...h.s, textAlign:"center", marginBottom:64 }}>
-          <div style={{ fontFamily:SCRIPT2, fontSize:28, color:INK, marginBottom:10 }}>— our shades —</div>
-          <h2 style={{ fontFamily:DISPLAY, fontSize:"clamp(34px,4.6vw,64px)", color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>The Glitter Collection</h2>
+          <div style={{ fontFamily:SCRIPT2, fontSize:TEXT_3XL, color:INK, marginBottom:10 }}>— our shades —</div>
+          <h2 style={{ fontFamily:DISPLAY, fontSize:DISPLAY_H1, color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>The Glitter Collection</h2>
         </div>
         <div className="prodGrid" style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:20 }}>
           {PRODUCTS.slice(0,6).map((p,i)=><ProductCard key={i} p={p} delay={i*75} />)}
         </div>
         <div style={{ textAlign:"center", marginTop:56, paddingBottom:88 }}>
-          <Link to="/shop" className="pbtn" style={{ display:"inline-block", background:PEACH, color:INK, border:"none", borderRadius:100, padding:"18px 48px", fontFamily:DISPLAY, fontSize:14, letterSpacing:"1px", textTransform:"uppercase", textDecoration:"none" }}>View All Shades →</Link>
+          <Link to="/shop" className="pbtn" style={{ display:"inline-block", background:PEACH, color:INK, border:"none", borderRadius:100, padding:"18px 48px", fontFamily:DISPLAY, fontSize:TEXT_BASE, letterSpacing:"1px", textTransform:"uppercase", textDecoration:"none" }}>View All Shades →</Link>
         </div>
       </div>
       <Wave from={LAV} to={PEACH} flip />
@@ -137,8 +137,8 @@ function WhyBling() {
     <section style={{ background:PEACH, padding:"100px 24px 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto" }}>
         <div ref={h.ref} style={{ ...h.s, textAlign:"center", marginBottom:72 }}>
-          <div style={{ fontFamily:SCRIPT2, fontSize:28, color:INK, marginBottom:10 } as CSSProperties}>why we&apos;re different</div>
-          <h2 style={{ fontFamily:DISPLAY, fontSize:"clamp(34px,4.6vw,64px)", color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>Why Bling?</h2>
+          <div style={{ fontFamily:SCRIPT2, fontSize:TEXT_3XL, color:INK, marginBottom:10 } as CSSProperties}>why we&apos;re different</div>
+          <h2 style={{ fontFamily:DISPLAY, fontSize:DISPLAY_H1, color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>Why Bling?</h2>
         </div>
         <div className="featGrid" style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:20 }}>
           {FEATURES.map((f,i)=><FeatureCard key={i} f={f} delay={i*100} />)}
@@ -160,9 +160,9 @@ function FeatureCard({ f, delay }: { f:typeof FEATURES[0]; delay:number }) {
         boxShadow:hov?"0 24px 56px rgba(0,0,0,.10)":"0 4px 16px rgba(0,0,0,.05)",
         transition:"all .38s cubic-bezier(.34,1.56,.64,1)" }}
         onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-        <div style={{ fontSize:44, marginBottom:20 }}>{f.icon}</div>
-        <h3 style={{ fontFamily:DISPLAY, fontSize:19, color:HEADING_INK, margin:"0 0 12px", letterSpacing:"0px", textTransform:"uppercase" }}>{f.title}</h3>
-        <p style={{ fontFamily:SANS, fontSize:15, lineHeight:1.75, color:INK, opacity:.68, margin:0 }}>{f.desc}</p>
+        <div style={{ fontSize:TEXT_5XL, marginBottom:20 }}>{f.icon}</div>
+        <h3 style={{ fontFamily:DISPLAY, fontSize:TEXT_XL, color:HEADING_INK, margin:"0 0 12px", letterSpacing:"0px", textTransform:"uppercase" }}>{f.title}</h3>
+        <p style={{ fontFamily:SANS, fontSize:TEXT_MD, lineHeight:1.75, color:INK, opacity:.68, margin:0 }}>{f.desc}</p>
       </div>
     </div>
   );
@@ -175,8 +175,8 @@ function HowItWorks() {
     <section style={{ background:YELLOW, padding:"100px 24px 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto" }}>
         <div ref={h.ref} style={{ ...h.s, textAlign:"center", marginBottom:72 }}>
-          <div style={{ fontFamily:SCRIPT2, fontSize:28, color:INK, marginBottom:10 } as CSSProperties}>simple as 1, 2, 3</div>
-          <h2 style={{ fontFamily:DISPLAY, fontSize:"clamp(34px,4.6vw,64px)", color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>How It Works</h2>
+          <div style={{ fontFamily:SCRIPT2, fontSize:TEXT_3XL, color:INK, marginBottom:10 } as CSSProperties}>simple as 1, 2, 3</div>
+          <h2 style={{ fontFamily:DISPLAY, fontSize:DISPLAY_H1, color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>How It Works</h2>
         </div>
         <div className="stepGrid" style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:24 }}>
           {STEPS.map((s,i)=><StepCard key={i} s={s} delay={i*140} />)}
@@ -193,10 +193,10 @@ function StepCard({ s, delay }: { s:typeof STEPS[0]; delay:number }) {
   return (
     <div ref={fu.ref} style={fu.s}>
       <div style={{ background:s.bg, borderRadius:32, padding:"52px 40px", position:"relative", overflow:"hidden" }}>
-        <div style={{ fontFamily:DISPLAY, fontSize:88, color:INK, opacity:.08, position:"absolute", top:-8, right:16, lineHeight:1, userSelect:"none" }}>{s.n}</div>
-        <div style={{ fontSize:50, marginBottom:20 }}>{s.icon}</div>
-        <h3 style={{ fontFamily:DISPLAY, fontSize:26, color:HEADING_INK, margin:"0 0 14px", letterSpacing:"0px", textTransform:"uppercase" }}>{s.label}</h3>
-        <p style={{ fontFamily:SANS, fontSize:15, lineHeight:1.75, color:INK, opacity:.68, margin:0 }}>{s.desc}</p>
+        <div style={{ fontFamily:DISPLAY, fontSize:TEXT_6XL, color:INK, opacity:.08, position:"absolute", top:-8, right:16, lineHeight:1, userSelect:"none" }}>{s.n}</div>
+        <div style={{ fontSize:TEXT_5XL, marginBottom:20 }}>{s.icon}</div>
+        <h3 style={{ fontFamily:DISPLAY, fontSize:TEXT_3XL, color:HEADING_INK, margin:"0 0 14px", letterSpacing:"0px", textTransform:"uppercase" }}>{s.label}</h3>
+        <p style={{ fontFamily:SANS, fontSize:TEXT_MD, lineHeight:1.75, color:INK, opacity:.68, margin:0 }}>{s.desc}</p>
       </div>
     </div>
   );
@@ -209,8 +209,8 @@ function Reviews() {
     <section style={{ background:PINK, padding:"100px 24px 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto" }}>
         <div ref={h.ref} style={{ ...h.s, textAlign:"center", marginBottom:72 }}>
-          <div style={{ fontFamily:SCRIPT2, fontSize:28, color:INK, marginBottom:10 } as CSSProperties}>from our community</div>
-          <h2 style={{ fontFamily:DISPLAY, fontSize:"clamp(34px,4.6vw,64px)", color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>Pure Sparkle Joy</h2>
+          <div style={{ fontFamily:SCRIPT2, fontSize:TEXT_3XL, color:INK, marginBottom:10 } as CSSProperties}>from our community</div>
+          <h2 style={{ fontFamily:DISPLAY, fontSize:DISPLAY_H1, color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>Pure Sparkle Joy</h2>
         </div>
         <div className="revGrid" style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:24 }}>
           {REVIEWS.map((r,i)=><ReviewCard key={i} r={r} delay={i*120} />)}
@@ -227,18 +227,18 @@ function ReviewCard({ r, delay }: { r:typeof REVIEWS[0]; delay:number }) {
   return (
     <div ref={fu.ref} style={fu.s}>
       <div style={{ background:r.bg, borderRadius:32, padding:"48px 40px", position:"relative" }}>
-        <div style={{ fontFamily:SCRIPT, fontSize:80, color:INK, opacity:.12, position:"absolute", top:4, left:24, lineHeight:1, userSelect:"none" }}>"</div>
+        <div style={{ fontFamily:SCRIPT, fontSize:TEXT_6XL, color:INK, opacity:.12, position:"absolute", top:4, left:24, lineHeight:1, userSelect:"none" }}>"</div>
         <div style={{ display:"flex", gap:4, marginBottom:20 }}>
-          {Array.from({length:r.rating}).map((_,i)=><span key={i} style={{color:INK,fontSize:20}}>★</span>)}
+          {Array.from({length:r.rating}).map((_,i)=><span key={i} style={{color:INK,fontSize:TEXT_XL}}>★</span>)}
         </div>
-        <p style={{ fontFamily:SANS, fontSize:16, lineHeight:1.8, color:INK, margin:"0 0 28px", fontStyle:"italic", opacity:.85 }}>
+        <p style={{ fontFamily:SANS, fontSize:TEXT_MD, lineHeight:1.8, color:INK, margin:"0 0 28px", fontStyle:"italic", opacity:.85 }}>
           "{r.text}"
         </p>
         <div style={{ display:"flex", alignItems:"center", gap:12 }}>
-          <div style={{ width:46, height:46, borderRadius:"50%", background:BG, color:INK, display:"flex", alignItems:"center", justifyContent:"center", fontFamily:DISPLAY, fontSize:13 }}>{r.avatar}</div>
+          <div style={{ width:46, height:46, borderRadius:"50%", background:BG, color:INK, display:"flex", alignItems:"center", justifyContent:"center", fontFamily:DISPLAY, fontSize:TEXT_SM }}>{r.avatar}</div>
           <div>
-            <div style={{ fontFamily:DISPLAY, fontSize:14, color:INK }}>{r.name}</div>
-            <div style={{ fontFamily:SANS, fontSize:13, color:INK, opacity:.5 }}>{r.handle}</div>
+            <div style={{ fontFamily:DISPLAY, fontSize:TEXT_BASE, color:INK }}>{r.name}</div>
+            <div style={{ fontFamily:SANS, fontSize:TEXT_SM, color:INK, opacity:.5 }}>{r.handle}</div>
           </div>
         </div>
       </div>
@@ -277,12 +277,12 @@ function Instagram() {
     <section style={{ background:CORAL, padding:"100px 24px 0" }}>
       <div style={{ maxWidth:1280, margin:"0 auto" }}>
         <div ref={h.ref} style={{ ...h.s, textAlign:"center", marginBottom:64 }}>
-          <div style={{ fontFamily:SCRIPT2, fontSize:32, color:BG, marginBottom:10 }}>@bling ✦</div>
-          <h2 style={{ fontFamily:DISPLAY, fontSize:"clamp(34px,4.6vw,64px)", color:HEADING_INK, margin:"0 0 20px", letterSpacing:"-1px", textTransform:"uppercase" }}>Tag Your Creations</h2>
-          <p style={{ fontFamily:SANS, fontSize:17, color:INK, opacity:.7, maxWidth:460, margin:"0 auto 40px", lineHeight:1.75 }}>
+          <div style={{ fontFamily:SCRIPT2, fontSize:TEXT_4XL, color:BG, marginBottom:10 }}>@bling ✦</div>
+          <h2 style={{ fontFamily:DISPLAY, fontSize:DISPLAY_H1, color:HEADING_INK, margin:"0 0 20px", letterSpacing:"-1px", textTransform:"uppercase" }}>Tag Your Creations</h2>
+          <p style={{ fontFamily:SANS, fontSize:TEXT_MD, color:INK, opacity:.7, maxWidth:460, margin:"0 auto 40px", lineHeight:1.75 }}>
             Join thousands sharing their sparkling creations. Every jar tells a story — what will yours be?
           </p>
-          <button className="pbtn" style={{ background:YELLOW, color:INK, border:"none", borderRadius:100, padding:"18px 48px", fontFamily:DISPLAY, fontSize:14, letterSpacing:"1px", textTransform:"uppercase" }}>Follow @Bling ✦</button>
+          <button className="pbtn" style={{ background:YELLOW, color:INK, border:"none", borderRadius:100, padding:"18px 48px", fontFamily:DISPLAY, fontSize:TEXT_BASE, letterSpacing:"1px", textTransform:"uppercase" }}>Follow @Bling ✦</button>
         </div>
         <div className="iWrap" style={{ display:"flex", flexWrap:"wrap", gap:16, justifyContent:"center", alignItems:"center" }}>
           {INSTA.map((item,i)=><InstaCard key={i} item={item} idx={i} />)}

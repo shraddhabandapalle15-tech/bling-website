@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { BG, INK, HEADING_INK, YELLOW, DISPLAY, SCRIPT2, SANS } from "../theme";
+import { BG, INK, HEADING_INK, YELLOW, DISPLAY, SCRIPT2, SANS, DISPLAY_H1, TEXT_2XL, TEXT_MD, TEXT_SM } from "../theme";
 import { RECIPES, RECIPE_CATEGORIES } from "../data/recipes";
 import { RecipeCard } from "../components/RecipeCard";
 
@@ -14,9 +14,9 @@ export default function Recipes() {
   return (
     <section style={{ background: BG, paddingTop: 72, minHeight: "100vh" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px 8px" }}>
-        <div style={{ fontFamily: SCRIPT2, fontSize: 22, color: INK, opacity: .55, marginBottom: 6 }}>— recipe library —</div>
-        <h1 style={{ fontFamily: DISPLAY, fontSize: "clamp(34px,5vw,64px)", color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>Drinks Worth Posting</h1>
-        <p style={{ fontFamily: SANS, fontSize: 16, color: INK, opacity: .6, margin: "0 0 28px", maxWidth: 520 }}>
+        <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— recipe library —</div>
+        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>Drinks Worth Posting</h1>
+        <p style={{ fontFamily: SANS, fontSize: TEXT_MD, color: INK, opacity: .6, margin: "0 0 28px", maxWidth: 520 }}>
           Every recipe pairs perfectly with a Bling shade. Pick your vibe and get sprinkling.
         </p>
 
@@ -29,7 +29,7 @@ export default function Recipes() {
                 onClick={() => setActive(c)}
                 className="pbtn"
                 style={{
-                  fontFamily: SANS, fontSize: 13.5, borderRadius: 100, padding: "9px 18px", cursor: "pointer",
+                  fontFamily: SANS, fontSize: TEXT_SM, borderRadius: 100, padding: "9px 18px", cursor: "pointer",
                   border: `1.5px solid ${on ? "transparent" : "rgba(23,23,23,.16)"}`,
                   background: on ? YELLOW : "transparent", color: INK, transition: "all .2s",
                 }}

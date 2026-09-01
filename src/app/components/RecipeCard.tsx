@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { Clock, Gauge } from "lucide-react";
-import { INK, HEADING_INK, DISPLAY, SANS } from "../theme";
+import { INK, HEADING_INK, DISPLAY, SANS, TEXT_2XS, TEXT_XL, TEXT_SM } from "../theme";
 import { PRODUCTS } from "../data/products";
 import type { Recipe } from "../data/recipes";
 import { useFadeUp } from "../hooks/useFadeUp";
@@ -29,13 +29,13 @@ export function RecipeCard({ r, delay = 0 }: { r: Recipe; delay?: number }) {
             position: "relative", height: 200, display: "flex", alignItems: "center", justifyContent: "center",
             background: `radial-gradient(circle at 30% 25%, rgba(255,255,255,.5), transparent 55%), linear-gradient(135deg, ${colorFrom}, ${colorTo})`,
           }}>
-            <span style={{ background: "#fff", color: INK, borderRadius: 100, padding: "7px 16px", fontFamily: DISPLAY, fontSize: 11, letterSpacing: ".5px", textTransform: "uppercase" }}>
+            <span style={{ background: "#fff", color: INK, borderRadius: 100, padding: "7px 16px", fontFamily: DISPLAY, fontSize: TEXT_2XS, letterSpacing: ".5px", textTransform: "uppercase" }}>
               {r.category}
             </span>
           </div>
           <div style={{ padding: "20px 22px 24px" }}>
-            <h3 style={{ fontFamily: DISPLAY, fontSize: 19, color: HEADING_INK, margin: "0 0 10px", letterSpacing: "-.2px" }}>{r.name}</h3>
-            <div style={{ display: "flex", alignItems: "center", gap: 16, fontFamily: SANS, fontSize: 13, color: INK, opacity: .6 }}>
+            <h3 style={{ fontFamily: DISPLAY, fontSize: TEXT_XL, color: HEADING_INK, margin: "0 0 10px", letterSpacing: "-.2px" }}>{r.name}</h3>
+            <div style={{ display: "flex", alignItems: "center", gap: 16, fontFamily: SANS, fontSize: TEXT_SM, color: INK, opacity: .6 }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><Clock size={13} /> {r.time} min</span>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}><Gauge size={13} /> {r.difficulty}</span>
             </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { Heart } from "lucide-react";
-import { INK, BG, DISPLAY, SANS } from "../theme";
+import { INK, BG, DISPLAY, SANS, TEXT_2XS, TEXT_SM, TEXT_MD, TEXT_XL, TEXT_XS } from "../theme";
 import { PRODUCTS } from "../data/products";
 import { useFadeUp } from "../hooks/useFadeUp";
 import { useCart } from "../context/CartContext";
@@ -21,21 +21,23 @@ export function ProductCard({ p, delay = 0 }: { p: typeof PRODUCTS[0]; delay?: n
             boxShadow: hov ? "0 28px 64px rgba(0,0,0,0.14)" : "0 4px 18px rgba(0,0,0,0.06)",
             transition:"all .38s cubic-bezier(.34,1.56,.64,1)" }}
           onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-          {p.badge && <div style={{ position:"absolute", top:16, right:16, background:BG, color:INK, borderRadius:100, padding:"5px 13px", fontSize:11, letterSpacing:".5px", textTransform:"uppercase", fontFamily:DISPLAY }}>{p.badge}</div>}
+          {p.badge && <div style={{ position:"absolute", top:16, right:16, background:BG, color:INK, borderRadius:100, padding:"5px 13px", fontSize:TEXT_2XS, letterSpacing:".5px", textTransform:"uppercase", fontFamily:DISPLAY }}>{p.badge}</div>}
           <button onClick={e=>{e.preventDefault();e.stopPropagation();setLiked(!liked);}} style={{ position:"absolute", top:16, left:16, background:BG, border:"none", borderRadius:"50%", width:34, height:34, display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", opacity:hov?1:0, transition:"opacity .2s", boxShadow:"0 2px 8px rgba(0,0,0,.1)" }}>
             <Heart size={15} color={INK} fill={liked?INK:"none"} />
           </button>
           <div style={{ display:"flex", justifyContent:"center", marginBottom:20, transform:hov?"scale(1.1) translateY(-6px)":"scale(1)", transition:"transform .42s cubic-bezier(.34,1.56,.64,1)" }}>
-            <Jar bg={p.bg} lid={p.lid} size={108} />
+            {p.image
+              ? <img src={p.image} alt={p.name} style={{ width:"100%", maxWidth:150, aspectRatio:"1/1", objectFit:"cover", borderRadius:"50%", boxShadow:"0 8px 24px rgba(0,0,0,.16)" }} />
+              : <Jar bg={p.bg} lid={p.lid} size={108} />}
           </div>
           {hov && [{x:18,y:28},{x:82,y:12},{x:156,y:36},{x:38,y:96},{x:136,y:78}].map((pos,i)=>(
-            <div key={i} className="tw" style={{ position:"absolute", left:pos.x, top:pos.y, fontSize:13, color:INK, opacity:.5, pointerEvents:"none", animationDelay:`${i*.18}s` }}>✦</div>
+            <div key={i} className="tw" style={{ position:"absolute", left:pos.x, top:pos.y, fontSize:TEXT_SM, color:INK, opacity:.5, pointerEvents:"none", animationDelay:`${i*.18}s` }}>✦</div>
           ))}
-          <div style={{ fontFamily:DISPLAY, fontSize:15, color:INK, marginBottom:4, letterSpacing:".2px" }}>{p.name}</div>
-          <div style={{ fontFamily:SANS, fontSize:13, color:INK, opacity:.58, marginBottom:14 }}>{p.desc}</div>
+          <div style={{ fontFamily:DISPLAY, fontSize:TEXT_MD, color:INK, marginBottom:4, letterSpacing:".2px" }}>{p.name}</div>
+          <div style={{ fontFamily:SANS, fontSize:TEXT_SM, color:INK, opacity:.58, marginBottom:14 }}>{p.desc}</div>
           <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
-            <span style={{ fontFamily:SANS, fontSize:19, fontWeight:700, color:INK }}>{p.price}</span>
-            <button onClick={e => { e.preventDefault(); e.stopPropagation(); addItem(p.slug); }} className="pbtn" style={{ background:BG, color:INK, border:"none", borderRadius:100, padding:"8px 18px", fontSize:12, letterSpacing:".5px", textTransform:"uppercase", fontFamily:DISPLAY, cursor:"pointer" }}>Add +</button>
+            <span style={{ fontFamily:SANS, fontSize:TEXT_XL, fontWeight:700, color:INK }}>{p.price}</span>
+            <button onClick={e => { e.preventDefault(); e.stopPropagation(); addItem(p.slug); }} className="pbtn" style={{ background:BG, color:INK, border:"none", borderRadius:100, padding:"8px 18px", fontSize:TEXT_XS, letterSpacing:".5px", textTransform:"uppercase", fontFamily:DISPLAY, cursor:"pointer" }}>Add +</button>
           </div>
         </div>
       </Link>

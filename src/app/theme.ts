@@ -27,3 +27,23 @@ export const SCRIPT  = "'Pacifico',cursive";        // bold expressive hand-draw
 export const SCRIPT2 = "'Satisfy',cursive";          // lighter handwritten script — small decorative phrases
 export const DISPLAY = "'Archivo Black',sans-serif"; // bold condensed uppercase — headlines, badges, buttons, labels
 export const SANS    = "'DM Sans',sans-serif";       // clean body sans
+
+/* ─── TYPE SCALE — consolidated font sizes; use these instead of one-off px values ── */
+export const TEXT_2XS = 11; // tiny badges, counters, avatar initials
+export const TEXT_XS  = 12; // micro labels, captions, small buttons
+export const TEXT_SM  = 13; // secondary text, nav links, meta info
+export const TEXT_BASE= 14; // default UI text, buttons, form inputs
+export const TEXT_MD  = 16; // body copy, comfortable reading text
+export const TEXT_LG  = 18; // prominent numbers, card titles
+export const TEXT_XL  = 20; // sub-headings, callouts, ratings
+export const TEXT_2XL = 22; // section eyebrows, small headings
+export const TEXT_3XL = 28; // medium headings
+export const TEXT_4XL = 32; // large stat headings
+export const TEXT_5XL = 48; // hero icon/numeral accents
+export const TEXT_6XL = 84; // giant decorative numerals, quote marks
+
+/* Responsive display headings — clamp(min, preferred, max) */
+export const DISPLAY_HERO = "clamp(44px,6.2vw,84px)"; // home hero H1 only
+export const DISPLAY_H1   = "clamp(34px,5vw,64px)";   // standard page headings
+export const DISPLAY_H2   = "clamp(30px,4.5vw,48px)"; // secondary page headings
+export const DISPLAY_H3   = "clamp(26px,3.6vw,44px)"; // small sub-headings

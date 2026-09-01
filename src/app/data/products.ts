@@ -9,6 +9,7 @@ export type Product = {
   inStock?: boolean;
   bg: string;
   lid: string;
+  image?: string;
   desc: string;
   badge: string;
   colorTag?: string;
@@ -87,6 +88,7 @@ export const PRODUCTS: Product[] = [
     name: "Purple Reign",
     price: "₹399",
     bg: "#dcd1ee", lid: "#7a5fa6",
+    image: "/images/purple-glitter.png",
     desc: "Chocolates & truffles",
     badge: "",
     colorTag: "Purple",

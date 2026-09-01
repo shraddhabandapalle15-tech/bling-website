@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS } from "../theme";
+import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H1, TEXT_MD, TEXT_2XL } from "../theme";
 import { useFadeUp } from "../hooks/useFadeUp";
 
 const FAQS = [
@@ -35,12 +35,12 @@ function FAQItem({ item, open, onToggle, delay, last }: { item: typeof FAQS[0]; 
   return (
     <div ref={fu.ref} style={{ ...fu.s, borderBottom: last ? "none" : "1px solid rgba(23,23,23,.1)" }}>
       <button onClick={onToggle} className="accHead" aria-expanded={open}
-        style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, padding: "22px 4px", background: "none", border: "none", fontFamily: SANS, fontWeight: 600, fontSize: 16, color: INK, cursor: "pointer", textAlign: "left" }}>
+        style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, padding: "22px 4px", background: "none", border: "none", fontFamily: SANS, fontWeight: 600, fontSize: TEXT_MD, color: INK, cursor: "pointer", textAlign: "left" }}>
         {item.q}
         <ChevronDown size={18} style={{ flexShrink: 0, transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform .3s" }} />
       </button>
       <div style={{ maxHeight: open ? 200 : 0, overflow: "hidden", transition: "max-height .35s ease" }}>
-        <p style={{ margin: "0 4px 24px", fontFamily: SANS, fontSize: 15, lineHeight: 1.75, color: INK, opacity: .68, maxWidth: 640 }}>{item.a}</p>
+        <p style={{ margin: "0 4px 24px", fontFamily: SANS, fontSize: TEXT_MD, lineHeight: 1.75, color: INK, opacity: .68, maxWidth: 640 }}>{item.a}</p>
       </div>
     </div>
   );
@@ -52,8 +52,8 @@ export default function FAQ() {
   return (
     <section style={{ background: BG, paddingTop: 72, minHeight: "100vh" }}>
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "72px 24px 96px" }}>
-        <div style={{ fontFamily: SCRIPT2, fontSize: 22, color: INK, opacity: .55, marginBottom: 6 }}>— good to know —</div>
-        <h1 style={{ fontFamily: DISPLAY, fontSize: "clamp(34px,5vw,56px)", color: HEADING_INK, margin: "0 0 40px", letterSpacing: "-1px", textTransform: "uppercase" }}>
+        <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— good to know —</div>
+        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: "0 0 40px", letterSpacing: "-1px", textTransform: "uppercase" }}>
           Frequently Asked Questions
         </h1>
 

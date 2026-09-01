@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { X, Minus, Plus } from "lucide-react";
-import { BG, INK, YELLOW, DISPLAY, SANS } from "../theme";
+import { BG, INK, YELLOW, DISPLAY, SANS, TEXT_LG, TEXT_BASE, TEXT_XS, TEXT_SM, TEXT_MD } from "../theme";
 import { PRODUCTS } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { Jar } from "./Jar";
@@ -25,7 +25,7 @@ export function CartDrawer() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "24px 24px 18px", borderBottom: "1px solid rgba(23,23,23,.1)" }}>
-          <div style={{ fontFamily: DISPLAY, fontSize: 18, color: INK, textTransform: "uppercase", letterSpacing: "-.2px" }}>Your Cart ({count})</div>
+          <div style={{ fontFamily: DISPLAY, fontSize: TEXT_LG, color: INK, textTransform: "uppercase", letterSpacing: "-.2px" }}>Your Cart ({count})</div>
           <button onClick={close} aria-label="Close cart" style={{ background: "none", border: "none", cursor: "pointer", color: INK, padding: 4, display: "flex" }}>
             <X size={22} />
           </button>
@@ -33,10 +33,10 @@ export function CartDrawer() {
 
         <div style={{ flex: 1, overflowY: "auto", padding: "8px 24px" }}>
           {items.length === 0 ? (
-            <div style={{ textAlign: "center", padding: "70px 12px", fontFamily: SANS, fontSize: 14.5, color: INK, opacity: .6 }}>
+            <div style={{ textAlign: "center", padding: "70px 12px", fontFamily: SANS, fontSize: TEXT_BASE, color: INK, opacity: .6 }}>
               Your cart is empty.
               <div style={{ marginTop: 18 }}>
-                <Link to="/shop" onClick={close} style={{ fontFamily: DISPLAY, fontSize: 12, letterSpacing: "1px", textTransform: "uppercase", color: INK, textDecoration: "underline" }}>
+                <Link to="/shop" onClick={close} style={{ fontFamily: DISPLAY, fontSize: TEXT_XS, letterSpacing: "1px", textTransform: "uppercase", color: INK, textDecoration: "underline" }}>
                   Continue Shopping
                 </Link>
               </div>
@@ -52,8 +52,8 @@ export function CartDrawer() {
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>
-                      <div style={{ fontFamily: DISPLAY, fontSize: 14, color: INK }}>{p.name}</div>
-                      <button onClick={() => removeItem(i.slug)} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: SANS, fontSize: 12, color: INK, opacity: .45, textDecoration: "underline", padding: 0, flexShrink: 0 }}>
+                      <div style={{ fontFamily: DISPLAY, fontSize: TEXT_BASE, color: INK }}>{p.name}</div>
+                      <button onClick={() => removeItem(i.slug)} style={{ background: "none", border: "none", cursor: "pointer", fontFamily: SANS, fontSize: TEXT_XS, color: INK, opacity: .45, textDecoration: "underline", padding: 0, flexShrink: 0 }}>
                         Remove
                       </button>
                     </div>
@@ -62,12 +62,12 @@ export function CartDrawer() {
                         <button onClick={() => setQty(i.slug, i.qty - 1)} aria-label="Decrease quantity" style={{ width: 26, height: 26, border: "none", background: "transparent", borderRadius: "50%", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: INK }}>
                           <Minus size={12} />
                         </button>
-                        <span style={{ width: 22, textAlign: "center", fontFamily: SANS, fontSize: 13 }}>{i.qty}</span>
+                        <span style={{ width: 22, textAlign: "center", fontFamily: SANS, fontSize: TEXT_SM }}>{i.qty}</span>
                         <button onClick={() => setQty(i.slug, i.qty + 1)} aria-label="Increase quantity" style={{ width: 26, height: 26, border: "none", background: "transparent", borderRadius: "50%", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", color: INK }}>
                           <Plus size={12} />
                         </button>
                       </div>
-                      <div style={{ fontFamily: SANS, fontSize: 14, fontWeight: 700, color: INK }}>₹{(priceNum(p.price) * i.qty).toFixed(0)}</div>
+                      <div style={{ fontFamily: SANS, fontSize: TEXT_BASE, fontWeight: 700, color: INK }}>₹{(priceNum(p.price) * i.qty).toFixed(0)}</div>
                     </div>
                   </div>
                 </div>
@@ -78,11 +78,11 @@ export function CartDrawer() {
 
         {items.length > 0 && (
           <div style={{ padding: "20px 24px 28px", borderTop: "1px solid rgba(23,23,23,.1)" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, fontFamily: SANS, fontSize: 15, fontWeight: 700, color: INK }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, fontFamily: SANS, fontSize: TEXT_MD, fontWeight: 700, color: INK }}>
               <span>Subtotal</span><span>₹{subtotal.toFixed(0)}</span>
             </div>
-            <div style={{ fontFamily: SANS, fontSize: 12.5, color: INK, opacity: .5, marginBottom: 18 }}>Shipping and taxes calculated at checkout.</div>
-            <Link to="/checkout" onClick={close} className="pbtn" style={{ display: "block", textAlign: "center", background: YELLOW, color: INK, borderRadius: 100, padding: "16px 32px", fontFamily: DISPLAY, fontSize: 14, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none" }}>
+            <div style={{ fontFamily: SANS, fontSize: TEXT_XS, color: INK, opacity: .5, marginBottom: 18 }}>Shipping and taxes calculated at checkout.</div>
+            <Link to="/checkout" onClick={close} className="pbtn" style={{ display: "block", textAlign: "center", background: YELLOW, color: INK, borderRadius: 100, padding: "16px 32px", fontFamily: DISPLAY, fontSize: TEXT_BASE, letterSpacing: "1px", textTransform: "uppercase", textDecoration: "none" }}>
               Checkout
             </Link>
           </div>
