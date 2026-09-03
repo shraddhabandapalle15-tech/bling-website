@@ -1,6 +1,6 @@
 import type { CSSProperties } from "react";
 import { Link } from "react-router";
-import { BG, INK, PINK, LAV, YELLOW, PEACH, BLUSH, DISPLAY, SCRIPT, SANS, TEXT_XL, TEXT_3XL, TEXT_MD, TEXT_BASE, TEXT_XS, TEXT_SM } from "../theme";
+import { BG, INK, PINK, LAV, YELLOW, PEACH, BLUSH, DISPLAY, SANS, TEXT_XL, TEXT_3XL, TEXT_MD, TEXT_BASE, TEXT_XS, TEXT_SM } from "../theme";
 
 export function Footer() {
   return (
@@ -18,7 +18,9 @@ export function Footer() {
         {/* columns */}
         <div className="footCols" style={{ display:"grid", gridTemplateColumns:"2fr 1fr 1fr 1fr", gap:48, marginBottom:64, paddingBottom:64, borderBottom:`1px solid rgba(23,23,23,.12)` }}>
           <div>
-            <Link to="/" style={{ fontFamily:SCRIPT, fontSize:TEXT_3XL, marginBottom:16, color:INK, textDecoration:"none", display:"inline-block" }}>Bling ✦</Link>
+            <Link to="/" style={{ fontFamily:"Caveat, cursive", fontSize:TEXT_3XL, fontWeight:700, marginBottom:16, color:"rgb(37, 37, 37)", textDecoration:"none", display:"inline-flex", alignItems:"center", gap:6, transform:"rotate(-2deg)" }}>
+              Bling <span style={{ fontFamily:"initial", fontSize:TEXT_MD }}>✦</span>
+            </Link>
             <p style={{ fontFamily:SANS, fontSize:TEXT_MD, opacity:.6, lineHeight:1.75, margin:"16px 0 24px", maxWidth:260 }}>
               Premium edible glitter for every celebration, creation, and cocktail hour.
             </p>
