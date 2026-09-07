@@ -44,15 +44,10 @@ export function Footer() {
         </div>
         {/* bottom bar */}
         <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:16 }}>
-          <div style={{ fontFamily:SANS, fontSize:TEXT_SM, opacity:.42 }}>© 2024 Bling Edible Glitter. All rights reserved.</div>
+          <div style={{ fontFamily:SANS, fontSize:TEXT_SM, opacity:.42 }}>© 2026 Bling Edible Glitter. All rights reserved.</div>
           <div style={{ display:"flex", gap:7 }}>
             {[PINK,LAV,YELLOW,PEACH,BLUSH].map((c,i)=>(
               <div key={i} style={{ width:10, height:10, borderRadius:"50%", background:c }} />
-            ))}
-          </div>
-          <div style={{ display:"flex", gap:24 }}>
-            {["Privacy","Terms","Cookies"].map(l=>(
-              <a key={l} href="#" style={{ fontFamily:SANS, fontSize:TEXT_SM, color:INK, textDecoration:"none", opacity:.42 }}>{l}</a>
             ))}
           </div>
         </div>

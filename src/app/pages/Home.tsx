@@ -58,7 +58,7 @@ function Hero() {
           {/* text */}
           <div>
             <div style={{ display:"inline-flex", alignItems:"center", gap:8, background:PINK, borderRadius:100, padding:"9px 20px", marginBottom:32, fontFamily:SANS, fontWeight:600, fontSize:TEXT_XS, letterSpacing:"1px", textTransform:"uppercase", color:INK, opacity:.9 }}>
-              ✦ Premium Edible Glitter — Est. 2020 ✦
+              ✦ Premium Edible Glitter — Est. 2026 ✦
             </div>
             <h1 style={{ fontFamily:DISPLAY, fontSize:DISPLAY_HERO, lineHeight:1.04, color:HEADING_INK, margin:"0 0 8px", letterSpacing:"-1.5px", textTransform:"uppercase" }}>
               Make Every Sip{" "}
