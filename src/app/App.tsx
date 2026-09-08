@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router";
 import { INK, BG, SANS } from "./theme";
 import { CartProvider } from "./context/CartContext";
+import { WishlistProvider } from "./context/WishlistContext";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
 import { CartDrawer } from "./components/CartDrawer";
@@ -11,6 +12,7 @@ import CollectionDetail from "./pages/CollectionDetail";
 import ProductDetail from "./pages/ProductDetail";
 import Recipes from "./pages/Recipes";
 import RecipeDetail from "./pages/RecipeDetail";
+import Wishlist from "./pages/Wishlist";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
@@ -60,6 +62,7 @@ const CSS = `
   html { scroll-behavior:smooth; }
 
   @media(max-width:900px){
+    .wishHeart   { opacity:1 !important; }
     .heroGrid    { grid-template-columns:1fr !important; text-align:center; }
     .heroJar     { display:none !important; }
     .dlinks      { display:none !important; }
@@ -98,27 +101,30 @@ export default function App() {
   return (
     <>
       <style>{CSS}</style>
-      <CartProvider>
-        <div style={{ fontFamily: SANS, color: INK, background: BG }}>
-          <Nav />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/collections" element={<Collections />} />
-            <Route path="/collections/:slug" element={<CollectionDetail />} />
-            <Route path="/product/:slug" element={<ProductDetail />} />
-            <Route path="/shop/:slug" element={<ProductDetail />} />
-            <Route path="/recipes" element={<Recipes />} />
-            <Route path="/recipes/:slug" element={<RecipeDetail />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/checkout" element={<Checkout />} />
-          </Routes>
-          <Footer />
-        </div>
-        <CartDrawer />
-      </CartProvider>
+      <WishlistProvider>
+        <CartProvider>
+          <div style={{ fontFamily: SANS, color: INK, background: BG }}>
+            <Nav />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/collections" element={<Collections />} />
+              <Route path="/collections/:slug" element={<CollectionDetail />} />
+              <Route path="/product/:slug" element={<ProductDetail />} />
+              <Route path="/shop/:slug" element={<ProductDetail />} />
+              <Route path="/recipes" element={<Recipes />} />
+              <Route path="/recipes/:slug" element={<RecipeDetail />} />
+              <Route path="/wishlist" element={<Wishlist />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+            <Footer />
+          </div>
+          <CartDrawer />
+        </CartProvider>
+      </WishlistProvider>
     </>
   );
 }

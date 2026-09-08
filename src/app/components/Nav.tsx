@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
-import { ShoppingCart, Menu, X } from "lucide-react";
+import { ShoppingCart, Heart, Menu, X } from "lucide-react";
 import { INK, BG, YELLOW, DISPLAY, SANS, TEXT_4XL, TEXT_LG, TEXT_SM, TEXT_2XS, TEXT_MD } from "../theme";
 import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
@@ -18,6 +19,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
   const { count, open: openCart } = useCart();
+  const { count: wishCount } = useWishlist();
   useEffect(() => {
     const h = () => setScroll(window.scrollY > 28);
     window.addEventListener("scroll", h);
@@ -35,6 +37,14 @@ export function Nav() {
           ))}
         </nav>
         <div style={{ display:"flex", alignItems:"center", gap:14 }}>
+          <Link to="/wishlist" aria-label="View wishlist" style={{ position:"relative", color:INK, padding:6, display:"flex", alignItems:"center", justifyContent:"center" }}>
+            <Heart size={22} />
+            {wishCount > 0 && (
+              <span style={{ position:"absolute", top:-2, right:-2, background:INK, color:BG, borderRadius:"50%", minWidth:17, height:17, fontSize:TEXT_2XS, fontFamily:DISPLAY, display:"flex", alignItems:"center", justifyContent:"center", padding:"0 3px" }}>
+                {wishCount}
+              </span>
+            )}
+          </Link>
           <button onClick={openCart} aria-label="Open cart" style={{ position:"relative", background:"none", border:"none", cursor:"pointer", color:INK, padding:6, display:"flex", alignItems:"center", justifyContent:"center" }}>
             <ShoppingCart size={22} />
             {count > 0 && (
