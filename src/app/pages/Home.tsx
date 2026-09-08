@@ -119,11 +119,7 @@ function Collection() {
           <h2 style={{ fontFamily:DISPLAY, fontSize:DISPLAY_H1, color:HEADING_INK, margin:0, letterSpacing:"-1px", textTransform:"uppercase" }}>The Glitter Collection</h2>
         </div>
         <div className="prodGrid" style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:20 }}>
-          {PRODUCTS.slice(0,6).map((p,i)=>(
-            <div key={i} style={{ width:"96%", margin:"0 auto" }}>
-              <ProductCard p={p} delay={i*75} />
-            </div>
-          ))}
+          {PRODUCTS.slice(0,6).map((p,i)=><ProductCard key={i} p={p} delay={i*75} />)}
         </div>
         <div style={{ textAlign:"center", marginTop:56, paddingBottom:88 }}>
           <Link to="/shop" className="pbtn" style={{ display:"inline-block", background:PEACH, color:INK, border:"none", borderRadius:100, padding:"18px 48px", fontFamily:DISPLAY, fontSize:TEXT_BASE, letterSpacing:"1px", textTransform:"uppercase", textDecoration:"none" }}>View All Shades →</Link>

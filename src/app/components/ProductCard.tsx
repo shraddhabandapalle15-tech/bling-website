@@ -21,8 +21,8 @@ export function ProductCard({ p, delay = 0 }: { p: typeof PRODUCTS[0]; delay?: n
             boxShadow: hov ? "0 28px 64px rgba(0,0,0,0.14)" : "0 4px 18px rgba(0,0,0,0.06)",
             transition:"all .38s cubic-bezier(.34,1.56,.64,1)" }}
           onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-          {p.badge && <div style={{ position:"absolute", top:16, right:16, background:BG, color:INK, borderRadius:100, padding:"5px 13px", fontSize:TEXT_2XS, letterSpacing:".5px", textTransform:"uppercase", fontFamily:DISPLAY }}>{p.badge}</div>}
-          <button onClick={e=>{e.preventDefault();e.stopPropagation();setLiked(!liked);}} style={{ position:"absolute", top:16, left:16, background:BG, border:"none", borderRadius:"50%", width:34, height:34, display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", opacity:hov?1:0, transition:"opacity .2s", boxShadow:"0 2px 8px rgba(0,0,0,.1)" }}>
+          {p.badge && <div style={{ position:"absolute", top:16, right:16, zIndex:1, background:BG, color:INK, borderRadius:100, padding:"5px 13px", fontSize:TEXT_2XS, letterSpacing:".5px", textTransform:"uppercase", fontFamily:DISPLAY }}>{p.badge}</div>}
+          <button onClick={e=>{e.preventDefault();e.stopPropagation();setLiked(!liked);}} style={{ position:"absolute", top:16, left:16, zIndex:1, background:BG, border:"none", borderRadius:"50%", width:34, height:34, display:"flex", alignItems:"center", justifyContent:"center", cursor:"pointer", opacity:hov?1:0, transition:"opacity .2s", boxShadow:"0 2px 8px rgba(0,0,0,.1)" }}>
             <Heart size={15} color={INK} fill={liked?INK:"none"} />
           </button>
           <div style={{ position:"relative", width:"100%", aspectRatio:"4/3", borderRadius:16, overflow:"hidden", background:p.bg, display:"flex", alignItems:"center", justifyContent:"center", marginBottom:20 }}>
