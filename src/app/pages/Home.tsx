@@ -88,7 +88,7 @@ function Hero() {
               </div>
               <div>
                 <div style={{ display:"flex", gap:2 }}>{Array.from({length:5}).map((_,i)=><span key={i} style={{color:CORAL,fontSize:TEXT_MD}}>★</span>)}</div>
-                <div style={{ fontFamily:DISPLAY, fontSize:TEXT_SM, opacity:.52, marginTop:2 }}>Loved by 12,000+ creators</div>
+                <div style={{ fontFamily:DISPLAY, fontSize:TEXT_SM, opacity:.52, marginTop:2 }}>Loved by creators</div>
               </div>
             </div>
           </div>
