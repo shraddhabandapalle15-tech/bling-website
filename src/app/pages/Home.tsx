@@ -69,7 +69,7 @@ function Hero() {
               
             </div>
             <p style={{ fontFamily:SANS, fontSize:TEXT_LG, lineHeight:1.8, color:INK, opacity:.68, maxWidth:480, marginBottom:48 }}>
-              Premium food-grade edible glitter for cakes, cocktails, desserts, chocolates, and beverages. Certified safe. Trusted by 12,000+ bakers and mixologists worldwide.
+              Premium food-grade edible glitter for cakes, cocktails, desserts, chocolates, and beverages. Certified safe and crafted to make every creation shine.
             </p>
             <div style={{ display:"flex", gap:16, flexWrap:"wrap", marginBottom:52 }}>
               <Link to="/shop" className="pbtn pulseAnim" style={{ display:"inline-block", background:YELLOW, color:INK, border:"none", borderRadius:100, padding:"18px 44px", fontFamily:DISPLAY, fontSize:TEXT_BASE, letterSpacing:"1px", textTransform:"uppercase", textDecoration:"none" }}>
