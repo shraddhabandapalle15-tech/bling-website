@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { Heart } from "lucide-react";
 import { BG, INK, YELLOW, DISPLAY, SANS, TEXT_2XS, TEXT_MD, TEXT_SM, TEXT_LG, TEXT_XS } from "../theme";
 import { type Product } from "../data/products";
 import { useFadeUp } from "../hooks/useFadeUp";
 import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 import { Jar } from "./Jar";
 
 export function ShopProductCard({ p, delay }: { p: Product; delay: number }) {
   const fu = useFadeUp(delay);
   const [hov, setHov] = useState(false);
   const { addItem } = useCart();
+  const { isWishlisted, toggleItem } = useWishlist();
+  const liked = isWishlisted(p.slug);
   const soldOut = p.inStock === false;
   const badgeLabel = soldOut ? "Sold Out" : p.originalPrice ? "Sale" : p.badge;
   const badgeStyle = soldOut
@@ -37,6 +41,9 @@ export function ShopProductCard({ p, delay }: { p: Product; delay: number }) {
                 {badgeLabel}
               </div>
             )}
+            <button onClick={e => { e.preventDefault(); e.stopPropagation(); toggleItem(p.slug); }} aria-label={liked ? "Remove from wishlist" : "Add to wishlist"} className="wishHeart" style={{ position: "absolute", top: 14, right: 14, zIndex: 1, background: BG, border: "none", borderRadius: "50%", width: 34, height: 34, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", opacity: (hov || liked) ? 1 : 0, transition: "opacity .2s", boxShadow: "0 2px 8px rgba(0,0,0,.1)" }}>
+              <Heart size={15} color={INK} fill={liked ? INK : "none"} />
+            </button>
             <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", transform: hov ? "scale(1.06)" : "scale(1)", transition: "transform .42s cubic-bezier(.34,1.56,.64,1)" }}>
               {p.image
                 ? <img src={p.image} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />

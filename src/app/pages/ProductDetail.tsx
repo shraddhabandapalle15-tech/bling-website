@@ -1,9 +1,10 @@
 import { useState, type ReactNode } from "react";
 import { Link, useParams } from "react-router";
-import { Minus, Plus, ChevronDown } from "lucide-react";
+import { Minus, Plus, ChevronDown, Heart } from "lucide-react";
 import { BG, YELLOW, INK, HEADING_INK, DISPLAY, SANS, SCRIPT2, DISPLAY_H2, DISPLAY_H3, TEXT_MD, TEXT_BASE, TEXT_SM, TEXT_XL, TEXT_XS, TEXT_4XL, TEXT_3XL } from "../theme";
 import { PRODUCTS, FEATURES, JAR_SIZE, SAFETY_INFO, PRODUCT_FAQS } from "../data/products";
 import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 import { Jar } from "../components/Jar";
 import { ProductCard } from "../components/ProductCard";
 
@@ -32,6 +33,8 @@ export default function ProductDetail() {
   const [qty, setQty] = useState(1);
   const [openAcc, setOpenAcc] = useState<"description" | "ingredients" | "usage" | "safety" | "faq" | null>("description");
   const { addItem } = useCart();
+  const { isWishlisted, toggleItem } = useWishlist();
+  const liked = isWishlisted(product.slug);
   const soldOut = product.inStock === false;
 
   const unitPrice = parseInt(product.price.replace("₹", ""), 10);
@@ -132,6 +135,17 @@ export default function ProductDetail() {
                   }}
                 >
                   {soldOut ? "Sold Out" : `Add to Bag — ₹${unitPrice * qty}`}
+                </button>
+                <button
+                  onClick={() => toggleItem(product.slug)}
+                  aria-label={liked ? "Remove from wishlist" : "Add to wishlist"}
+                  className="pbtn"
+                  style={{
+                    width: 56, height: 56, borderRadius: "50%", border: `2px solid rgba(23,23,23,.14)`,
+                    background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flexShrink: 0,
+                  }}
+                >
+                  <Heart size={20} color={INK} fill={liked ? INK : "none"} />
                 </button>
               </div>
 
