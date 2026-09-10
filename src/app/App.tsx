@@ -85,14 +85,15 @@ const CSS = `
     .collGrid    { grid-template-columns:1fr 1fr !important; }
   }
   @media(max-width:540px){
-    .prodGrid   { grid-template-columns:1fr !important; }
-    .featGrid   { grid-template-columns:1fr !important; }
-    .gallGrid   { grid-template-columns:1fr !important; }
-    .footCols   { grid-template-columns:1fr !important; }
-    .iCard      { width:100px !important; height:100px !important; }
-    .pdpGallery { grid-template-columns:1fr !important; }
-    .pdpRelated { grid-template-columns:1fr !important; }
-    .collGrid   { grid-template-columns:1fr !important; }
+    .prodGrid    { grid-template-columns:1fr !important; }
+    .featGrid    { grid-template-columns:1fr !important; }
+    .gallGrid    { grid-template-columns:1fr !important; }
+    .footCols    { grid-template-columns:1fr !important; }
+    .iCard       { width:100px !important; height:100px !important; }
+    .pdpGallery  { grid-template-columns:1fr !important; }
+    .pdpRelated  { grid-template-columns:1fr !important; }
+    .collGrid    { grid-template-columns:1fr !important; }
+    .shopSidebar { display:none !important; }
   }
 `;
 
