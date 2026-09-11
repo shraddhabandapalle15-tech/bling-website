@@ -1,4 +1,4 @@
-import { BG, PEACH, LAV, PINK, YELLOW, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H1, DISPLAY_H3, TEXT_XL, TEXT_BASE, TEXT_2XL, TEXT_MD } from "../theme";
+import { BG, PEACH, LAV, PINK, YELLOW, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H3, TEXT_XL, TEXT_BASE, TEXT_2XL, TEXT_MD } from "../theme";
 import { Wave } from "../components/Wave";
 import { useFadeUp } from "../hooks/useFadeUp";
 
@@ -42,7 +42,7 @@ export default function About() {
       <section style={{ background: BG, paddingTop: 72 }}>
         <div style={{ maxWidth: 900, margin: "0 auto", padding: "72px 24px 8px", textAlign: "center" }}>
           <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— our story —</div>
-          <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: "0 0 20px", letterSpacing: "-1px", textTransform: "uppercase" }}>
+          <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "0 0 20px", letterSpacing: "-1px", textTransform: "uppercase" }}>
             Sparkle, Made Responsibly.
           </h1>
           <p style={{ fontFamily: SANS, fontSize: TEXT_MD, color: INK, opacity: .62, lineHeight: 1.8, margin: "0 auto", maxWidth: 640 }}>

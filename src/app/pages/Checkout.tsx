@@ -1,6 +1,6 @@
 import { useState, type FormEvent, type CSSProperties } from "react";
 import { Link } from "react-router";
-import { BG, INK, HEADING_INK, YELLOW, DISPLAY, SCRIPT2, SANS, DISPLAY_H2, DISPLAY_H3, TEXT_MD, TEXT_2XL, TEXT_BASE, TEXT_XL, TEXT_SM, TEXT_XS, TEXT_LG } from "../theme";
+import { BG, INK, HEADING_INK, YELLOW, DISPLAY, SCRIPT2, SANS, DISPLAY_H3, TEXT_MD, TEXT_2XL, TEXT_BASE, TEXT_XL, TEXT_SM, TEXT_XS, TEXT_LG } from "../theme";
 import { PRODUCTS } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { Jar } from "../components/Jar";
@@ -37,7 +37,7 @@ export default function Checkout() {
       <section style={{ background: BG, paddingTop: 72, minHeight: "100vh", display: "flex", alignItems: "center" }}>
         <div style={{ maxWidth: 560, margin: "0 auto", padding: "24px", textAlign: "center" }}>
           <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— all set —</div>
-          <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H2, color: HEADING_INK, margin: "0 0 16px", letterSpacing: "-1px", textTransform: "uppercase" }}>
+          <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "0 0 16px", letterSpacing: "-1px", textTransform: "uppercase" }}>
             Order Placed ✦
           </h1>
           <p style={{ fontFamily: SANS, fontSize: TEXT_MD, color: INK, opacity: .65, lineHeight: 1.8, margin: "0 0 32px" }}>
@@ -70,7 +70,7 @@ export default function Checkout() {
   return (
     <section style={{ background: BG, paddingTop: 72, minHeight: "100vh" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto", padding: "56px 24px 100px" }}>
-        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H2, color: HEADING_INK, margin: "0 0 40px", letterSpacing: "-1px", textTransform: "uppercase" }}>
+        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "0 0 40px", letterSpacing: "-1px", textTransform: "uppercase" }}>
           Checkout
         </h1>
 

@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Mail, MessageCircle, Instagram } from "lucide-react";
-import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H1, TEXT_MD, TEXT_2XL, TEXT_SM, TEXT_BASE, TEXT_2XS } from "../theme";
+import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H3, TEXT_MD, TEXT_2XL, TEXT_SM, TEXT_BASE, TEXT_2XS } from "../theme";
 
 const CHANNELS = [
   { icon: Mail, label: "Email", value: "hello@bling.co.in" },
@@ -25,7 +25,7 @@ export default function Contact() {
     <section style={{ background: BG, paddingTop: 72, minHeight: "100vh" }}>
       <div style={{ maxWidth: 1000, margin: "0 auto", padding: "72px 24px 100px" }}>
         <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— get in touch —</div>
-        <h1 style={{ fontFamily: SANS, fontWeight: 700, fontSize: DISPLAY_H1, color: HEADING_INK, margin: "0 0 44px", letterSpacing: "-0.5px" }}>
+        <h1 style={{ fontFamily: SANS, fontWeight: 700, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "0 0 44px", letterSpacing: "-0.5px" }}>
           Contact Us
         </h1>
 

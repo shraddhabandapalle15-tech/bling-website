@@ -1,5 +1,5 @@
 import { useMemo, useState, type CSSProperties } from "react";
-import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H1, TEXT_SM, TEXT_2XL, TEXT_BASE, TEXT_XS } from "../theme";
+import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H3, TEXT_SM, TEXT_2XL, TEXT_BASE, TEXT_XS } from "../theme";
 import { PRODUCTS } from "../data/products";
 import { ShopProductCard } from "../components/ShopProductCard";
 
@@ -50,7 +50,7 @@ export default function Shop() {
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px 8px" }}>
         <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— shop —</div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 12 }}>
-          <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: 0, letterSpacing: "-1px", textTransform: "uppercase" }}>All Glitter Shades</h1>
+          <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: 0, letterSpacing: "-1px", textTransform: "uppercase" }}>All Glitter Shades</h1>
           <div style={{ fontFamily: SANS, fontSize: TEXT_BASE, color: INK, opacity: .5 }}>{filtered.length} of {OFFICIAL_SHADES.length} shades</div>
         </div>
       </div>

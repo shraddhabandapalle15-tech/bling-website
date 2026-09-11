@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H1, TEXT_MD, TEXT_2XL } from "../theme";
+import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H3, TEXT_MD, TEXT_2XL } from "../theme";
 import { useFadeUp } from "../hooks/useFadeUp";
 
 const FAQS = [
@@ -53,7 +53,7 @@ export default function FAQ() {
     <section style={{ background: BG, paddingTop: 72, minHeight: "100vh" }}>
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "72px 24px 96px" }}>
         <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— good to know —</div>
-        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: "0 0 40px", letterSpacing: "-1px", textTransform: "uppercase" }}>
+        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "0 0 40px", letterSpacing: "-1px", textTransform: "uppercase" }}>
           Frequently Asked Questions
         </h1>
 

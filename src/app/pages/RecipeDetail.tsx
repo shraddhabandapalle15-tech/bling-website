@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router";
 import { Clock, Gauge } from "lucide-react";
-import { BG, INK, HEADING_INK, DISPLAY, SANS, DISPLAY_H2, TEXT_SM, TEXT_XS, TEXT_MD, TEXT_BASE, TEXT_2XL } from "../theme";
+import { BG, INK, HEADING_INK, DISPLAY, SANS, DISPLAY_H3, TEXT_SM, TEXT_XS, TEXT_MD, TEXT_BASE, TEXT_2XL } from "../theme";
 import { RECIPES } from "../data/recipes";
 import { PRODUCTS } from "../data/products";
 import { ProductCard } from "../components/ProductCard";
@@ -30,7 +30,7 @@ export default function RecipeDetail() {
           </span>
         </div>
 
-        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H2, color: HEADING_INK, margin: "28px 0 12px", letterSpacing: "-.5px" }}>{recipe.name}</h1>
+        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "28px 0 12px", letterSpacing: "-.5px" }}>{recipe.name}</h1>
         <p style={{ fontFamily: SANS, fontSize: TEXT_MD, color: INK, opacity: .65, lineHeight: 1.7, margin: "0 0 16px", maxWidth: 560 }}>{recipe.tagline}</p>
         <div style={{ display: "flex", alignItems: "center", gap: 20, fontFamily: SANS, fontSize: TEXT_BASE, color: INK, opacity: .6, marginBottom: 48 }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}><Clock size={15} /> {recipe.time} min</span>

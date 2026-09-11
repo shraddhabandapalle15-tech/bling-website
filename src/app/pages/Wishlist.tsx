@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { Heart } from "lucide-react";
-import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, YELLOW, DISPLAY_H1, TEXT_SM, TEXT_2XL, TEXT_BASE, TEXT_MD } from "../theme";
+import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, YELLOW, DISPLAY_H3, TEXT_SM, TEXT_2XL, TEXT_BASE, TEXT_MD } from "../theme";
 import { PRODUCTS } from "../data/products";
 import { useWishlist } from "../context/WishlistContext";
 import { ProductCard } from "../components/ProductCard";
@@ -16,7 +16,7 @@ export default function Wishlist() {
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px 8px" }}>
         <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— saved for later —</div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 12 }}>
-          <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: 0, letterSpacing: "-1px", textTransform: "uppercase" }}>My Wishlist</h1>
+          <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: 0, letterSpacing: "-1px", textTransform: "uppercase" }}>My Wishlist</h1>
           {wishedProducts.length > 0 && (
             <div style={{ fontFamily: SANS, fontSize: TEXT_BASE, color: INK, opacity: .5 }}>{wishedProducts.length} saved {wishedProducts.length === 1 ? "shade" : "shades"}</div>
           )}

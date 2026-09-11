@@ -5,6 +5,7 @@ import { WishlistProvider } from "./context/WishlistContext";
 import { Nav } from "./components/Nav";
 import { Footer } from "./components/Footer";
 import { CartDrawer } from "./components/CartDrawer";
+import { ScrollToTop } from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Collections from "./pages/Collections";
@@ -15,6 +16,8 @@ import RecipeDetail from "./pages/RecipeDetail";
 import Wishlist from "./pages/Wishlist";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
+import Shipping from "./pages/Shipping";
+import Returns from "./pages/Returns";
 import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
 
@@ -105,6 +108,7 @@ export default function App() {
       <WishlistProvider>
         <CartProvider>
           <div style={{ fontFamily: SANS, color: INK, background: BG }}>
+            <ScrollToTop />
             <Nav />
             <Routes>
               <Route path="/" element={<Home />} />
@@ -118,6 +122,8 @@ export default function App() {
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/about" element={<About />} />
               <Route path="/faq" element={<FAQ />} />
+              <Route path="/shipping" element={<Shipping />} />
+              <Route path="/returns" element={<Returns />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/checkout" element={<Checkout />} />
             </Routes>

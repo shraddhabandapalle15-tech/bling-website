@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { BG, INK, HEADING_INK, YELLOW, DISPLAY, SCRIPT2, SANS, DISPLAY_H1, TEXT_2XL, TEXT_MD, TEXT_SM } from "../theme";
+import { BG, INK, HEADING_INK, YELLOW, DISPLAY, SCRIPT2, SANS, DISPLAY_H3, TEXT_2XL, TEXT_MD, TEXT_SM } from "../theme";
 import { RECIPES, RECIPE_CATEGORIES } from "../data/recipes";
 import { RecipeCard } from "../components/RecipeCard";
 
@@ -15,7 +15,7 @@ export default function Recipes() {
     <section style={{ background: BG, paddingTop: 72, minHeight: "100vh" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px 8px" }}>
         <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— recipe library —</div>
-        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>Drinks Worth Posting</h1>
+        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>Drinks Worth Posting</h1>
         <p style={{ fontFamily: SANS, fontSize: TEXT_MD, color: INK, opacity: .6, margin: "0 0 28px", maxWidth: 520 }}>
           Every recipe pairs perfectly with a Bling shade. Pick your vibe and get sprinkling.
         </p>

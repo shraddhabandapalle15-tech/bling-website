@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Link, useParams } from "react-router";
 import { Minus, Plus, ChevronDown } from "lucide-react";
-import { BG, YELLOW, INK, HEADING_INK, DISPLAY, SANS, SCRIPT2, DISPLAY_H2, DISPLAY_H3, TEXT_MD, TEXT_BASE, TEXT_SM, TEXT_XL, TEXT_XS, TEXT_4XL, TEXT_3XL } from "../theme";
+import { BG, YELLOW, INK, HEADING_INK, DISPLAY, SANS, SCRIPT2, DISPLAY_H3, TEXT_MD, TEXT_BASE, TEXT_SM, TEXT_XL, TEXT_XS, TEXT_4XL, TEXT_3XL } from "../theme";
 import { PRODUCTS, FEATURES, JAR_SIZE, SAFETY_INFO, PRODUCT_FAQS } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { Jar } from "../components/Jar";
@@ -82,7 +82,7 @@ export default function ProductDetail() {
                   <span key={t} style={{ fontFamily: SANS, fontSize: TEXT_XS, color: INK, opacity: .65, border: "1.5px solid rgba(23,23,23,.16)", borderRadius: 100, padding: "5px 13px" }}>{t}</span>
                 ))}
               </div>
-              <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H2, color: HEADING_INK, margin: "0 0 14px", letterSpacing: "-.5px", textTransform: "uppercase" }}>{product.name}</h1>
+              <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "0 0 14px", letterSpacing: "-.5px", textTransform: "uppercase" }}>{product.name}</h1>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20, flexWrap: "wrap" }}>
                 <div style={{ display: "flex", gap: 2 }}>
                   {Array.from({ length: 5 }).map((_, i) => <span key={i} style={{ color: INK, fontSize: TEXT_MD }}>{i < Math.round(product.rating) ? "★" : "☆"}</span>)}

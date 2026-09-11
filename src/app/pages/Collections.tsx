@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H1, TEXT_3XL, TEXT_BASE, TEXT_SM, TEXT_2XL, TEXT_MD } from "../theme";
+import { BG, INK, HEADING_INK, DISPLAY, SCRIPT2, SANS, DISPLAY_H3, TEXT_3XL, TEXT_BASE, TEXT_SM, TEXT_2XL, TEXT_MD } from "../theme";
 import { COLLECTIONS, type Collection } from "../data/collections";
 import { useFadeUp } from "../hooks/useFadeUp";
 
@@ -37,7 +37,7 @@ export default function Collections() {
     <section style={{ background: BG, paddingTop: 72, minHeight: "100vh" }}>
       <div style={{ maxWidth: 1280, margin: "0 auto", padding: "48px 24px 8px" }}>
         <div style={{ fontFamily: SCRIPT2, fontSize: TEXT_2XL, color: INK, opacity: .55, marginBottom: 6 }}>— curated —</div>
-        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>Collections</h1>
+        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>Collections</h1>
         <p style={{ fontFamily: SANS, fontSize: TEXT_MD, color: INK, opacity: .6, margin: 0 }}>Shade edits curated for the moments that matter most.</p>
       </div>
 

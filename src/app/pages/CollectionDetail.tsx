@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router";
-import { BG, INK, HEADING_INK, DISPLAY, SANS, DISPLAY_H1, TEXT_SM, TEXT_MD } from "../theme";
+import { BG, INK, HEADING_INK, DISPLAY, SANS, DISPLAY_H3, TEXT_SM, TEXT_MD } from "../theme";
 import { COLLECTIONS } from "../data/collections";
 import { PRODUCTS } from "../data/products";
 import { ShopProductCard } from "../components/ShopProductCard";
@@ -19,7 +19,7 @@ export default function CollectionDetail() {
           <span>/</span>
           <span style={{ opacity: .85 }}>{collection.name}</span>
         </div>
-        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H1, color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>{collection.name}</h1>
+        <h1 style={{ fontFamily: DISPLAY, fontSize: DISPLAY_H3, color: HEADING_INK, margin: "0 0 12px", letterSpacing: "-1px", textTransform: "uppercase" }}>{collection.name}</h1>
         <p style={{ fontFamily: SANS, fontSize: TEXT_MD, color: INK, opacity: .6, margin: 0, maxWidth: 520 }}>{collection.subtitle}</p>
       </div>
 

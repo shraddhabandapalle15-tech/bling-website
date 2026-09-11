@@ -36,9 +36,12 @@ export function Footer() {
           ].map(col=>(
             <div key={col.title}>
               <div style={{ fontFamily:DISPLAY, fontSize:TEXT_XS, letterSpacing:"1.5px", textTransform:"uppercase", opacity:.42, marginBottom:18 }}>{col.title}</div>
-              {col.links.map(l=>(
-                <Link key={l} to={l==="All Shades" ? "/shop" : "/"} className="flink" style={{ display:"block", fontFamily:SANS, fontSize:TEXT_MD, color:INK, textDecoration:"none", opacity:.6, marginBottom:11 }}>{l}</Link>
-              ))}
+              {col.links.map(l=>{
+                const href = l==="All Shades" ? "/shop" : l==="FAQ" ? "/faq" : l==="Shipping" ? "/shipping" : l==="Returns" ? "/returns" : l==="Contact Us" ? "/contact" : "/";
+                return (
+                  <Link key={l} to={href} className="flink" style={{ display:"block", fontFamily:SANS, fontSize:TEXT_MD, color:INK, textDecoration:"none", opacity:.6, marginBottom:11 }}>{l}</Link>
+                );
+              })}
             </div>
           ))}
         </div>
