@@ -191,8 +191,8 @@ function HowItWorks() {
 function StepCard({ s, delay }: { s:typeof STEPS[0]; delay:number }) {
   const fu = useFadeUp(delay);
   return (
-    <div ref={fu.ref} style={fu.s}>
-      <div style={{ background:s.bg, borderRadius:32, padding:"52px 40px", position:"relative", overflow:"hidden" }}>
+    <div ref={fu.ref} style={{ ...fu.s, height:"100%" }}>
+      <div style={{ background:s.bg, borderRadius:32, padding:"52px 40px", position:"relative", overflow:"hidden", height:"100%", boxSizing:"border-box", display:"flex", flexDirection:"column" }}>
         <div style={{ fontFamily:DISPLAY, fontSize:TEXT_6XL, color:INK, opacity:.08, position:"absolute", top:-8, right:16, lineHeight:1, userSelect:"none" }}>{s.n}</div>
         <div style={{ fontSize:TEXT_5XL, marginBottom:20 }}>{s.icon}</div>
         <h3 style={{ fontFamily:DISPLAY, fontSize:TEXT_3XL, color:HEADING_INK, margin:"0 0 14px", letterSpacing:"0px", textTransform:"uppercase" }}>{s.label}</h3>
